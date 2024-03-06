@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Universe Hub</title>
-    <link rel="shortcut icon" href="./image/logo.png" type="">
+    <link rel="shortcut icon" href="./image/logo.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,51 +70,10 @@
         <div>
             <!-- Open the modal using ID.showModal() method -->
 <dialog id="my_modal_4" class="modal">
-  <div class="modal-box w-4/5  max-w-3xl">
+  <div class="modal-box lg:w-4/5 lg:max-w-3xl">
     <!-- modal container  -->
-    <div id="modalContainer" class="flex flex-row gap-6">
-        <!-- <div class="p-6 w-1/2 rounded-2xl bg-[#EB57570D] border-[#EB5757]">
-            <h1>${tech.description}</h1>
-            <div class="flex bg-white justify-between flex-row">
-                <div class="rounded-xl text-base font-extrabold text-[#03A30A]">
-                    <p>${tech.pricing[0].price}</p>
-                    <p>${tech.pricing[0].plan}</p>
-                </div>
-                <div class="rounded-xl text-base font-extrabold text-[#F28927]">
-                    <p>${tech.pricing[1].price}</p>
-                    <p>${tech.pricing[1].plan}</p>
-                </div>
-                <div class="rounded-xl text-base font-extrabold text-[#EB5757]">
-                    <p>${tech.pricing[2].price}</p>
-                    <p>${tech.pricing[2].plan}</p>
-                </div>
-            </div>
-            <div class="flex flex-row justify-between">
-                <div>
-                    <h1 class="text-2xl font-extrabold">Features</h1>
-                    <ol>
-                        <li>${tech.features.1.feature_name}</li>
-                        <li>${tech.features.2.feature_name}</li>
-                        <li>${tech.features.3.feature_name}</li>
-                    </ol>
-                </div>
-                <div>
-                    <h1 class="text-2xl font-extrabold">Integrations</h1>
-                    <ol>
-                        <li>${tech.integrations[0]}</li>
-                        <li>${tech.integrations[1]}</li>
-                        <li>${tech.integrations[2]}</li>
-                    </ol>
-                </div>
-                
-            </div>
-        </div>
-        <div class="p-6 w-1/2 rounded-2xl bg-white border-[#E7E7E7] text-center">
-            <img src="${tech.image_link[0]}" alt="">
-            <h1 class="text-2xl font-extrabold">${tech.input_output_examples[0].input}</h1>
-            <p class="text-base text-[#585858]">${tech.input_output_examples[0].output}</p>
-        </div> -->
-
+    <div id="modalContainer" class="flex flex-col-reverse lg:flex-row gap-6">
+    
     </div>
     <div class="modal-action">
       <form method="dialog">

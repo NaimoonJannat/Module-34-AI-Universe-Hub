@@ -77,44 +77,50 @@ const handelArrowBtn = async(id) =>{
 const showToolModal = (tech) =>{
     const showDetailContainer = document.getElementById('modalContainer');
     showDetailContainer.innerHTML = `
-    <div class="p-6 w-1/2 space-y-2 rounded-2xl bg-[#EB57570D] border-2 border-[#EB5757]">
+    <div class="p-6 lg:w-1/2 space-y-2 rounded-2xl bg-[#EB57570D] border-2 border-[#EB5757]">
     <h1>${tech.description}</h1>
     <div class="flex gap-2 flex-row w-full">
-        <div class="rounded-xl p-4 w-1/3 bg-white text-lg font-bold text-[#03A30A]">
-            <p>${tech.pricing[0].price}</p>
-            <p>${tech.pricing[0].plan}</p>
+        <div class="rounded-xl p-4 w-1/3 bg-white text-xs font-bold text-[#03A30A]">
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[0]?.price || '' : ''}</p>
+
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[0]?.plan || '' : ''}</p>
+
         </div>
-        <div class="rounded-xl p-4 w-1/3 bg-white text-lg font-bold text-[#F28927]">
-            <p>${tech.pricing[1].price}</p>
-            <p>${tech.pricing[1].plan}</p>
+        <div class="rounded-xl p-4 w-1/3 bg-white text-xs font-bold text-[#F28927]">
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[1]?.price || '' : ''}</p>
+
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[1]?.plan || '' : ''}</p>
         </div>
-        <div class="rounded-xl p-4 w-1/3 bg-white text-lg font-bold text-[#EB5757]">
-            <p>${tech.pricing[2].price}</p>
-            <p>${tech.pricing[2].plan}</p>
+        <div class="rounded-xl p-4 w-1/3 bg-white text-xs font-bold text-[#EB5757]">
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[2]?.price || '' : ''}</p>
+
+        <p>${tech?.pricing && Array.isArray(tech.pricing) ? tech.pricing[2]?.plan || '' : ''}</p>
         </div>
     </div>
     <div class="flex flex-row justify-between">
         <div>
-            <h1 class="text-xl font-bold">Features</h1>
+            <h1 class="text-lg font-semibold">Features</h1>
             <ol>
                 
             </ol>
         </div>
         <div>
-            <h1 class="text-xl font-bold">Integrations</h1>
+            <h1 class="text-lg font-semibold">Integrations</h1>
             <ol>
-                <li>${tech.integrations[0]}</li>
-                <li>${tech.integrations[1]}</li>
-                <li>${tech.integrations[2]}</li>
+            <li>${Array.isArray(tech?.integrations) ? tech.integrations[0] || '' : ''}</li>
+            <li>${Array.isArray(tech?.integrations) ? tech.integrations[1] || '' : ''}</li>
+            <li>${Array.isArray(tech?.integrations) ? tech.integrations[2] || '' : ''}</li>
+            
             </ol>
         </div>
         
     </div>
 </div>
-<div class="p-6 w-1/2 rounded-2xl bg-white border-[#E7E7E7] border-2 text-center">
-    <img src="${tech.image_link[0]}" alt="">
-    <h1 class="text-2xl font-extrabold">${tech.input_output_examples[0].input}</h1>
-    <p class="text-base text-[#585858]">${tech.input_output_examples[0].output}</p>
+<div class="p-6 lg:w-1/2 rounded-2xl bg-white border-[#E7E7E7] border-2 text-center">
+    <img src="${tech.image_link[0]}" class="rounded-xl" alt="">
+    <h1 class="text-2xl font-extrabold">${tech?.input_output_examples && Array.isArray(tech.input_output_examples) ? tech.input_output_examples[0]?.input || '' : ''}</h1>
+<p class="text-base text-[#585858]">${tech?.input_output_examples && Array.isArray(tech.input_output_examples) ? tech.input_output_examples[0]?.output || '' : ''}</p>
+
 </div>
     `;
     my_modal_4.showModal();
