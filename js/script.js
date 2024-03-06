@@ -13,7 +13,7 @@ const cardContainer = document.getElementById('cardContainer');
 
 const display = (tools) =>{
     tools.forEach(tool =>{
-         console.log(tool.features);
+        //  console.log(tool.features);
         // 2: create a div and set classlist
         const toolCard=document.createElement('div');
 
@@ -48,7 +48,7 @@ const display = (tools) =>{
                         </div>
                     </div>
                     <div>
-                        <button class="btn btn-circle bg-[#FEF7F7] text-[#EB5757]">
+                        <button onclick="handelArrowBtn('${tool.id}')" class="btn btn-circle bg-[#FEF7F7] text-[#EB5757]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none">
                                 <path d="M4.5 12H19.5M19.5 12L12.75 5.25M19.5 12L12.75 18.75" stroke="#EB5757"
@@ -63,4 +63,17 @@ const display = (tools) =>{
         cardContainer.appendChild(toolCard);
          
     });
+}
+
+const handelArrowBtn = async(id) =>{
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const tech = data.data;
+    console.log(tech);
+    showToolModal(tech);
+
+}
+const showToolModal = (tech) =>{
+    
 }
